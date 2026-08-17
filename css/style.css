@@ -29,7 +29,6 @@ h1.letitre {
     font-size: 30px;
     font-family: monospace;
     transition: transform 0.9s ease;
-    color: black;
 }
 
 nav.navi {
@@ -254,7 +253,7 @@ h1.letitre {
     font-size: clamp(2rem, 5vw, 4rem);
     line-height: 1.1;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: white;
+    color: rgb(0, 0, 0);
     transition: transform .3s ease
 }
 
