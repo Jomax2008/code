@@ -1,0 +1,436 @@
+section.intro {
+    background-color: beige;
+    padding-top: 80px;
+}
+
+
+/* fin de l a section principale */
+
+nav.navi ul li {
+    display: inline-block;
+    background-color: rgb(32, 72, 126);
+    font-size: 30px;
+}
+
+nav.navi ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+body section.intro {
+    background: url(../image/vrPDx.jpg) no-repeat;
+    background-position-y: -120px;
+    padding-bottom: 350px;
+    border-radius: 2%;
+    transition: transform 2s ease;
+}
+
+h1.letitre {
+    font-size: 30px;
+    font-family: monospace;
+    transition: transform 0.9s ease;
+}
+
+nav.navi {
+    background-color: rgb(32, 72, 126);
+}
+
+nav.navi ul li a:hover {
+    color: rgb(236, 230, 230);
+    background-color: rgb(3, 22, 51);
+    transition: 1s;
+}
+
+section.paragraphe p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: larger;
+    font-optical-sizing: auto;
+    width: 100%;
+    transition: transform 1.5s ease;
+}
+
+ul.bkn {
+    background-color: rgb(32, 72, 126);
+    font-size: 20px;
+    width: 10%;
+    border-radius: 3%;
+}
+
+ul.bkn:hover {
+    background-color: rgb(3, 22, 51);
+    color: white;
+    transition: 0.9s;
+}
+
+div#case {
+    transition: transform 0.9s ease;
+}
+
+div:hover {
+    transform: scale(1.01);
+}
+
+h1.letitre:hover {
+    transform: scale(1.01);
+}
+
+.intro:hover {
+    transform: scale(1.01);
+}
+
+section.paragraphe p:hover {
+    transform: scale(1.01);
+}
+
+.paragraphe {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav.navi ul li:hover {
+    transition: transform 0.5s ease;
+    transform: scale(1.04);
+}
+
+footer p {
+    padding-inline-start: 600px;
+}
+
+
+/* ===== Couche moderne & responsive ===== */
+
+:root {
+    --primary: rgb(32, 72, 126);
+    --primary-dark: rgb(3, 22, 51);
+    --text: #172033;
+    --surface: rgba(255, 255, 255, .92);
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(3, 22, 51, .12)
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden
+}
+
+section.intro {
+    background-color: beige;
+    padding: clamp(40px, 7vw, 80px) clamp(20px, 5vw, 70px);
+    min-height: clamp(420px, 70vh, 700px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0 0 var(--radius) var(--radius);
+    background-image: url("../image/vrPDx.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden
+}
+
+section.intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(3, 22, 51, .72), rgba(3, 22, 51, .18));
+    pointer-events: none
+}
+
+section.intro>* {
+    position: relative;
+    z-index: 1
+}
+
+nav.navi {
+    background: rgba(32, 72, 126, .96);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .12);
+    transition: box-shadow .3s ease
+}
+
+
+/* Effet au scroll (ajouté par script.js) */
+
+nav.navi.nav-scrolled {
+    box-shadow: 0 6px 22px rgba(0, 0, 0, .2)
+}
+
+
+/* Bouton burger (créé par script.js si absent du HTML) */
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    margin: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer
+}
+
+.nav-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .25s ease
+}
+
+nav.navi.nav-open .nav-toggle span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg)
+}
+
+nav.navi.nav-open .nav-toggle span:nth-child(2) {
+    opacity: 0
+}
+
+nav.navi.nav-open .nav-toggle span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg)
+}
+
+nav.navi ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px
+}
+
+nav.navi ul li {
+    display: block;
+    background: transparent;
+    font-size: clamp(16px, 2vw, 20px)
+}
+
+nav.navi ul li a {
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    transition: background-color .25s ease, color .25s ease, transform .25s ease
+}
+
+nav.navi ul li a:hover,
+nav.navi ul li a:focus-visible {
+    color: white;
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    outline: none
+}
+
+
+/* Page en cours (ajouté par script.js) */
+
+nav.navi ul li a.active {
+    background-color: var(--primary-dark);
+    font-weight: 600
+}
+
+h1.letitre {
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.1;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: white;
+    transition: transform .3s ease
+}
+
+section.paragraphe {
+    width: min(1100px, calc(100% - 32px));
+    margin: 30px auto;
+    padding: clamp(20px, 4vw, 40px);
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow)
+}
+
+section.paragraphe p {
+    margin: 0;
+    font-family: Cambria, Georgia, serif;
+    font-style: normal;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    width: 100%;
+    transition: transform .3s ease
+}
+
+ul.bkn {
+    width: fit-content;
+    max-width: 100%;
+    margin: 20px 0;
+    padding: 12px 20px 12px 36px;
+    background-color: var(--primary);
+    color: white;
+    font-size: clamp(16px, 2vw, 20px);
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(32, 72, 126, .2);
+    transition: background-color .25s ease, transform .25s ease
+}
+
+ul.bkn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px)
+}
+
+div#case {
+    transition: transform .3s ease
+}
+
+div:hover {
+    transform: translateY(-2px)
+}
+
+h1.letitre:hover {
+    transform: translateY(-2px)
+}
+
+.intro:hover {
+    transform: none
+}
+
+section.paragraphe p:hover {
+    transform: none
+}
+
+nav.navi ul li:hover {
+    transition: transform .25s ease;
+    transform: none
+}
+
+footer {
+    padding: 25px 20px;
+    text-align: center
+}
+
+footer p {
+    margin: 0;
+    padding-inline-start: 0
+}
+
+@media(max-width:768px) {
+    .nav-toggle {
+        display: flex
+    }
+    nav.navi ul {
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        width: 100%
+    }
+    nav.navi.nav-open ul {
+        display: flex
+    }
+    nav.navi ul li {
+        flex: 0 0 auto;
+        width: 100%
+    }
+    nav.navi ul li a {
+        text-align: center
+    }
+    section.intro {
+        min-height: 480px;
+        background-position: center
+    }
+    section.paragraphe {
+        width: min(calc(100% - 24px), 680px);
+        margin: 20px auto
+    }
+}
+
+@media(max-width:480px) {
+    nav.navi ul li a {
+        padding: 10px 13px;
+        font-size: 15px
+    }
+    section.intro {
+        min-height: 420px;
+        padding: 35px 18px;
+        background-position: center
+    }
+    section.intro::before {
+        background: linear-gradient(90deg, rgba(3, 22, 51, .78), rgba(3, 22, 51, .35))
+    }
+    h1.letitre {
+        font-size: clamp(1.8rem, 10vw, 2.6rem)
+    }
+    section.paragraphe {
+        width: calc(100% - 20px);
+        padding: 20px;
+        border-radius: 12px
+    }
+    ul.bkn {
+        width: 100%;
+        padding-left: 30px
+    }
+    footer {
+        padding: 20px 12px
+    }
+}
+
+.reveal-init {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease, transform .6s ease
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: none
+}
+
+.form-status {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: .95rem;
+    min-height: 1px
+}
+
+.form-status:empty {
+    padding: 0;
+    margin-top: 0
+}
+
+.form-status--success {
+    color: #14532d;
+    background-color: #dcfce7
+}
+
+.form-status--error {
+    color: #7f1d1d;
+    background-color: #fee2e2
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+    *,
+    *::before,
+    *::after {
+        transition: none!important;
+        animation: none!important
+    }
+}
